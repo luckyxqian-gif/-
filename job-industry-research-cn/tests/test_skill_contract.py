@@ -36,7 +36,7 @@ class SkillContractTests(unittest.TestCase):
             "只列公司项目、政策新闻、宣传口号或行业通识，不构成 B 门通过",
             "只罗列风险名称、法规名称和通用动作，不构成通过",
             "不得开始写正式报告正文、确定最终栏目、制作 HTML/DOCX/PDF/PPT 或进行版面压缩",
-            "HTML 默认值与三页 A4 上限只规定研究完成后的呈现方式与阅读负担",
+            "HTML 默认值与五页 A4 上限只规定研究完成后的呈现方式与阅读负担",
         ]:
             self.assertIn(phrase, SKILL)
         self.assertIn("可以在降低结论确定性后进入整合", SKILL)
@@ -62,7 +62,7 @@ class SkillContractTests(unittest.TestCase):
         self.assertNotIn("四个正文模块", SKILL)
 
     def test_output_contract_is_compact_and_beginner_readable(self):
-        self.assertIn("最多三张 A4", SKILL)
+        self.assertIn("最多五张 A4", SKILL)
         self.assertIn("面向没有行业背景的读者", SKILL)
         self.assertIn("按信息逻辑组织自然小节或更直接的专题顺序", SKILL)
         self.assertIn("内部检索笔记、过程记录、测试日志和 AI 推理不进入", SKILL)
