@@ -69,6 +69,11 @@ class SkillContractTests(unittest.TestCase):
         self.assertIn("不得在交付后自动询问扩展约 5000 字", SKILL)
         self.assertNotIn("是否需要我在这份完整报告基础上整理或扩展为约 5000 字", SKILL)
 
+    def test_sources_are_only_in_the_final_independent_html_room(self):
+        self.assertIn("只在报告末尾作为唯一的独立“资料来源”板块", SKILL)
+        self.assertIn("最后一个独立导航房间", SKILL)
+        self.assertIn("正文不放来源列表、链接、检索说明或来源逐条解释", SKILL)
+
     def test_reader_first_business_to_legal_conversion_is_explicit(self):
         for phrase in [
             "**先解码核心业务。**", "谁是客户、为什么会付费，交易或收入怎样形成",

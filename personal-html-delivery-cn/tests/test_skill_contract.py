@@ -164,6 +164,12 @@ class SkillContractTests(unittest.TestCase):
         self.assertIn("公开发布完成", skill)
         self.assertIn("HTTPS URL", skill)
 
+    def test_sources_are_a_single_final_content_room(self):
+        combined = read("SKILL.md") + read("references/visual-print-contract.md")
+        self.assertIn("报告末尾唯一的独立“资料来源”内容区", combined)
+        self.assertIn("最后一个独立内容房间", combined)
+        self.assertIn("不得在正文板块重复来源清单、链接或逐条出处说明", combined)
+
 
 if __name__ == "__main__":
     unittest.main()
