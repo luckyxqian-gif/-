@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN" data-capabilities="review editor print" data-document-key="invalid-editor" data-content-version="v1"><head><meta charset="utf-8"><title>缺少编辑器</title>
+<style>
+.toolbar{display:flex}.system-key{color:#74292e;font-weight:700;text-decoration:underline}.user-highlight{text-decoration:underline red}
+@media screen and (max-width:760px){main{display:block}}
+@page{size:A4}.card{break-inside:avoid}
+@media print{.toolbar{display:none!important}.card{break-inside:avoid}}
+</style></head><body>
+<div class="toolbar">
+<button data-action="focus">聚焦重点</button><button data-action="highlight">添加高亮</button>
+<button data-action="remove-highlight">取消高亮</button><button data-action="edit">编辑正文</button>
+<button data-action="print">打印</button><button data-action="save-copy">保存修改副本</button>
+</div>
+<main><p><mark class="system-key">关键结论</mark></p><p><span class="user-highlight">用户标记</span></p></main>
+<script>window.personalHtmlQa=()=>({});</script></body></html>

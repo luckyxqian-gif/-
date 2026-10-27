@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="zh-CN" data-capabilities="review navigation print" data-document-key="validator-valid" data-content-version="v1"><head><meta charset="utf-8"><title>验证件</title>
+<style>
+.toolbar,.section-nav{display:flex}.system-key{color:#74292e;font-weight:700;text-decoration:underline}.user-highlight{text-decoration:underline red}
+@media screen and (max-width:760px){main{display:block}}
+@page{size:A4}.card{break-inside:avoid}
+@media print{
+  .toolbar,.section-nav{display:none!important}
+  .card{break-inside:avoid}
+}
+</style></head><body>
+<div class="toolbar">
+<button data-action="focus">聚焦重点</button><button data-action="highlight">添加高亮</button>
+<button data-action="remove-highlight">取消高亮</button><button data-action="print">打印</button>
+<button data-action="save-copy">保存含高亮副本</button>
+</div>
+<nav class="section-nav"><a href="#part-a">板块甲</a><a href="#part-b">板块乙</a></nav>
+<main class="room-stack">
+<section id="part-a" data-section><h2>板块甲</h2><p data-role="key"><mark class="system-key">关键结论</mark></p><p data-role="supporting">必要解释</p><details><summary>补充材料</summary><p>细节</p></details></section>
+<section id="part-b" data-section><h2>板块乙</h2><p data-role="key"><span class="user-highlight">关键结论</span></p><p data-role="supporting">必要解释</p><details><summary>补充材料</summary><p>细节</p></details></section>
+</main><footer>参考文献</footer><script>/* personal-html-interactions-baseline:v2 */ window.personalHtmlQa=()=>({});</script></body></html>

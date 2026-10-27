@@ -1,0 +1,4 @@
+interface:
+  display_name: "通用 HTML 交付"
+  short_description: "将内容整理成可扫读、可编辑、可打印的自包含 HTML"
+  default_prompt: "使用 $personal-html-delivery-cn 将本次内容整理为结构完整、重点清晰、按需可本地编辑的自包含 HTML；如提供认可的视觉参考，先提取并落实其视觉系统，再完成三层验收。"

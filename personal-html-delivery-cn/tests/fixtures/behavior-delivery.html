@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-CN" data-capabilities="navigation review editor print" data-document-key="behavior-v4" data-content-version="v1">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>通用 HTML 能力行为测试</title>
+  <link rel="stylesheet" href="../../assets/layout-print.css">
+  <style>
+    *{box-sizing:border-box} button{font:inherit}.toolbar{display:flex;gap:8px;flex-wrap:wrap;padding:10px 14px;background:#fff;border-bottom:1px solid var(--line)}
+    .toolbar button{padding:6px 10px;background:#fff;border:1px solid var(--line);border-radius:8px}.status{color:var(--muted)}
+    article{width:min(820px,calc(100% - 28px));margin:24px auto;background:#fff;padding:30px 36px}
+    [data-section]{padding:28px 0;border-bottom:1px solid var(--line)}h1{font-size:24px}h2{font-size:19px}.key{font-size:17px;font-weight:650}
+    details{margin-top:12px;border:1px solid var(--line);border-radius:8px;padding:10px 12px}
+    @media screen and (max-width:760px){article{padding:22px 18px}}
+    @media print{article{width:auto;margin:0;padding:0}.toolbar,.section-nav{display:none!important}}
+  </style>
+</head>
+<body>
+  <div class="toolbar" role="toolbar">
+    <button data-action="focus" aria-pressed="false">聚焦重点</button>
+    <button data-action="highlight" aria-pressed="false">添加高亮</button><button data-action="remove-highlight" aria-pressed="false">取消高亮</button>
+    <button data-action="edit" aria-pressed="false">编辑正文</button><button data-action="undo">撤销</button><button data-action="redo">重做</button>
+    <button data-action="print">打印</button><button data-action="save-copy">保存修改副本</button><span class="status" role="status"></span>
+  </div>
+  <div class="selection-toolbar" data-editor-toolbar role="toolbar" aria-label="所选文字格式" hidden>
+    <select data-command="fontSize" aria-label="字号"><option value="15">15</option><option value="17">17</option><option value="20">20</option></select>
+    <button data-command="bold" aria-label="加粗"><b>B</b></button><button data-command="italic" aria-label="斜体"><i>I</i></button>
+    <button data-command="underline" aria-label="下划线"><u>U</u></button><button data-command="strikeThrough" aria-label="删除线"><s>S</s></button>
+    <input type="color" data-command="foreColor" aria-label="文字颜色" value="#9b393d">
+    <button data-command="createLink">链接</button><button data-command="justifyLeft">左对齐</button><button data-command="justifyCenter">居中</button><button data-command="justifyRight">右对齐</button>
+    <button data-command="removeFormat">清除格式</button><button data-command="delete">删除</button>
+  </div>
+  <nav class="section-nav"><a href="#position">总体判断</a><a href="#relationship">关键关系</a><a href="#action">行动路径</a></nav>
+  <article><header><h1>行为测试页</h1><p>本次交付时间：2026 年 10 月 21 日</p></header><main class="room-stack">
+    <section id="position" data-section data-editable><h2>总体判断</h2><p class="key" data-role="key"><mark class="system-key">关键结论保持醒目。</mark></p><p data-role="supporting">辅助解释在聚焦时只被柔化，仍然可读。</p><details data-role="detail"><summary>补充材料</summary><p>展开内容不会被删除。</p></details></section>
+    <section id="relationship" data-section data-editable><h2>关键关系</h2><p class="key" data-role="key">第二个板块也有自己的关键结论。</p><p data-role="supporting">每个真实板块都落实主次，不另设阅读层级栏目。</p><details data-role="detail"><summary>口径与细节</summary><p>精确内容放在所属板块内。</p></details></section>
+    <section id="action" data-section data-editable><h2>行动路径</h2><p class="key" data-role="key">导航定位到这里时不会返回页首。</p><p data-role="supporting">当前板块由导航高亮提示。</p><details data-role="detail"><summary>补充动作</summary><p>需要时再展开。</p></details></section>
+  </main><footer>参考文献</footer></article>
+  <script src="../../assets/interactions.js"></script>
+</body></html>
