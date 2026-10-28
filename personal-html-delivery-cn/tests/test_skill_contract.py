@@ -164,6 +164,14 @@ class SkillContractTests(unittest.TestCase):
         self.assertIn("公开发布完成", skill)
         self.assertIn("HTTPS URL", skill)
 
+    def test_verified_publication_must_be_registered_in_the_html_web_ledger(self):
+        skill = read("SKILL.md")
+        self.assertIn("HTML 网页台账", skill)
+        self.assertIn("tblgxRvbmaZYiwmo", skill)
+        self.assertIn("发布状态为 `published` 后写入", skill)
+        self.assertIn("回读核验", skill)
+        self.assertIn("不得把求职投递表、岗位表或其他飞书表当作网页台账", skill)
+
     def test_sources_are_a_single_final_content_room(self):
         combined = read("SKILL.md") + read("references/visual-print-contract.md")
         self.assertIn("报告末尾唯一的独立“资料来源”内容区", combined)
